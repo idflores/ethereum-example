@@ -4,8 +4,12 @@
 After performing [research](https://github.com/idflores/blockchain-example) in Blockchain technology, I discovered major blockchain implementations that needed their own repository to continue performing personal in-depth studies. This repository is purposed as a growing knowledge-base for the Ethereum blockchain and is focused on the technology beyond its CryptoCurrency applications.
 
 ## Usage
+#### [Savings](contracts/savings.sol)
+1. Copy and paste the desired contract code from [`contracts/savings.sol`](contracts/savings.sol) to Ethereum's [Remix](https://remix.ethereum.org) IDE.
 
-## "Whitepaper"
+2. Create a contract instance and test by depositing and withdrawaling Ether.
+
+## "White Paper"
 
 ### Ethereum Defined
 **Ethereum** is an implementation of the BlockChain technology. Unlike its predecessor, Bitcoin, who used blockchain solely for CryptoCurrency applications, Ethereum was built to focus on decentralized conditional data development, or blockchain *Smart Contracts*. Ethereum still has a crypto coin, [*Ether*](#ether); however, its primary purpose is to serve as a basis for incentivizing blockchain miners.
@@ -140,7 +144,7 @@ The purpose of the enclosing repository is to prove to myself deep understanding
 ### Example Contract
 An offline version of Ethereum's [Remix](https://remix.ethereum.org) was used to compile and execute in a test environment the example contract. The test was performed using *JavaScript VM* environment supplied by Remix with Google Chrome as the host browser. Details can be found in [Development Environment](#development-environment).
 
-The example contract, _**Savings**_, is a simple implementation of a Ether savings account. It was designed to be instantiated with an Ether amount and solely accessible by the contract creator. `deposit()` and `withdrawal()` functions are present for obvious utility and care was taken to prevent a "double dipping" vulnerability which can occur if a request is made to withdrawal multiple times before the transaction has complete execution. The source code can be found at [docs/savings.sol](docs/savings.sol).
+The example contract, _**Savings**_, is a simple implementation of a Ether savings account. It was designed to be instantiated with an Ether amount and solely accessible by the contract creator. `deposit()` and `withdrawal()` functions are present for obvious utility and care was taken to prevent a "double dipping" vulnerability which can occur if a request is made to withdrawal multiple times before the transaction has complete execution. The source code can be found at [contracts/savings.sol](docs/savings.sol).
 
 ![](README_assets/Remix-Savings-Contract.png)
 
