@@ -1,5 +1,7 @@
 <h1 align="center">Ethereum Example</h1>
 
+![](README_assets/Remix-Savings-Contract.png)
+
 ## Motivation
 After performing [research](https://github.com/idflores/blockchain-example) in Blockchain technology, I discovered major blockchain implementations that needed their own repository to continue performing personal in-depth studies. This repository is purposed as a growing knowledge-base for the Ethereum blockchain and is focused on the technology beyond its CryptoCurrency applications.
 
