@@ -1,0 +1,28 @@
+{
+  "name": "aquarium-shop",
+  "version": "0.1.0",
+  "description": "An example Dapp using Truffle, MeteorJS, and ReactJS",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idflores/ethereum-example.git"
+  },
+  "keywords": [
+    "Ethereum"
+  ],
+  "author": "Israel Flores <https://github.com/idflores>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/idflores/ethereum-example/issues"
+  },
+  "homepage": "https://github.com/idflores/ethereum-example#readme",
+  "dependencies": {
+    "truffle": "^4.0.6"
+  }
+}

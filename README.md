@@ -11,6 +11,9 @@ After performing [research](https://github.com/idflores/blockchain-example) in B
 
 2. Create a contract instance and test by depositing and withdrawaling Ether.
 
+#### [Aquarium Shop ÐApp](dapps/aquarium-shop)
+
+
 ## "White Paper"
 
 ### Ethereum Defined
@@ -168,8 +171,8 @@ The example contract, _**Savings**_, is a simple implementation of a Ether savin
   + "Environment" setting: *JavaScript VM*
 
 #### Example ÐApps
-+ [Truffle v](http://truffleframework.com)
-+ [Ganache v](http://truffleframework.com/ganache/)
++ [Truffle v4.0.6](http://truffleframework.com) -- `npm install -g truffle`
++ [Ganache v1.1.0-beta.0](http://truffleframework.com/ganache/)
 
 ## Disclaimer
 This project is meant to be a personal knowledge-base and example of the Ethereum blockchain technology principles. Several features are intentionally missing. While the repository will grow with new research, examples and algorithms, it is never recommended to be used for production.
