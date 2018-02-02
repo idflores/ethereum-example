@@ -6,7 +6,7 @@
 After performing [research](https://github.com/idflores/blockchain-example) in Blockchain technology, I discovered major blockchain implementations that needed their own repository to continue performing personal in-depth studies. This repository is purposed as a growing knowledge-base for the Ethereum blockchain and is focused on the technology beyond its CryptoCurrency applications.
 
 ## Usage
-#### [Savings](contracts/savings.sol)
+#### [Savings Contract](contracts/savings.sol)
 1. Copy and paste the desired contract code from [`contracts/savings.sol`](contracts/savings.sol) to Ethereum's [Remix](https://remix.ethereum.org) IDE.
 
 2. Create a contract instance and test by depositing and withdrawaling Ether.
