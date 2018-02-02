@@ -12,7 +12,7 @@ After performing [research](https://github.com/idflores/blockchain-example) in B
 2. Create a contract instance and test by depositing and withdrawaling Ether.
 
 #### [Aquarium Shop ÐApp](dapps/aquarium-shop)
-
+[under development]
 
 ## "White Paper"
 
@@ -154,7 +154,7 @@ The example contract, _**Savings**_, is a simple implementation of a Ether savin
 ![](README_assets/Remix-Savings-Contract.png)
 
 ### Example ÐApp
-[to be completed]
+[under development]
 
 ## Development Environment
 + MacOS High Sierra v10.13.2
