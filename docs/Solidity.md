@@ -11,15 +11,18 @@ A reference to the Solidity DSL.
 
 **`import`**
 
-**`payable`**
-
 **`pragma`** an instruction to dictate a version to the compiler preventing unwanted behavior from compiler version updates
 
 **`public`** makes the accompanying variable accessible to other contracts by implicitly generating an accessor/getter method
 
 **`storage`**
 
-**`view`**
+#### Functions
+**`payable`** modifies a function type to allow the function to accept Ether
+
+**`pure`** a function type that promises not to read or modify the contract's state
+
+**`view`** a function type that promises not to modify the contract's state but can read the state
 
 
 ### Functions
