@@ -135,6 +135,17 @@ While perhaps not beneficial in all cases, this distinctly implies that most mod
 + decentralized and permanent transaction **history**.
 
 ## Proof-of-Concept
+The purpose of the enclosing repository is to prove to myself deep understanding of the concepts above. Consequently, I performed the following test and created both an Ethereum example contract and example ÐApp.
+
+### Example Contract
+An offline version of Ethereum's [Remix](https://remix.ethereum.org) was used to compile and execute in a test environment the example contract. The test was performed using *JavaScript VM* environment supplied by Remix with Google Chrome as the host browser. Details can be found in [Development Environment](#development-environment).
+
+The example contract, _**Savings**_, is a simple implementation of a Ether savings account. It was designed to be instantiated with an Ether amount and solely accessible by the contract creator. `deposit()` and `withdrawal()` functions are present for obvious utility and care was taken to prevent a "double dipping" vulnerability which can occur if a request is made to withdrawal multiple times before the transaction has complete execution. The source code can be found at [docs/savings.sol](docs/savings.sol).
+
+![](README_assets/Remix-Savings-Contract.png)
+
+### Example ÐApp
+[to be completed]
 
 ## Development Environment
 + MacOS High Sierra v10.13.2
@@ -143,12 +154,12 @@ While perhaps not beneficial in all cases, this distinctly implies that most mod
   + 16GB 1867MHz DDR3
 + Atom v1.23.3 (downloaded)
 + Hyper Terminal v1.4.8 (downloaded)
++ [Ethereum Mist Wallet v0.9.3 [Rinkeby]](https://github.com/ethereum/mist/releases/tag/v0.9.3) (downloaded)
 
 #### Example Contracts
 + [Remix v1.1 build d50dcc4](https://github.com/ethereum/browser-solidity/tree/gh-pages) (offline)
   + Google Chrome v63.0.3239.132 (64-bit)
   + "Environment" setting: *JavaScript VM*
-+ [Ethereum Mist Wallet v0.9.3 [Rinkeby]](https://github.com/ethereum/mist/releases/tag/v0.9.3) (downloaded)
 
 #### Example ÐApps
 + [Truffle v](http://truffleframework.com)

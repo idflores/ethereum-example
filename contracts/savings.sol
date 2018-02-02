@@ -6,13 +6,13 @@ contract Savings {
 
   // logging events for client transaction history
   event Deposit(address indexed _from, uint value);
-  event Withdrawl(address indexed _from, uint value);
+  event Withdrawal(address indexed _from, uint value);
 
   // the address of the account who created the contract
   address public accountOwner;
 
   // used later to prevent a "double dipping" vulnerability
-  bool public withdrawlState = false;
+  bool public withdrawalState = false;
 
   // checks to ensure that the one removing depositing or removing funds
   // is always the creator of the contract
@@ -34,12 +34,12 @@ contract Savings {
 
   // function that allows account owner to withdrawl funds from contract
   // and protects against "double dipping"
-  function withdrawl(uint value) checkSender public payable {
-    if (withdrawlState == false) {
-      withdrawlState = true;
+  function withdrawal(uint value) checkSender public payable {
+    if (withdrawalState == false) {
+      withdrawalState = true;
       msg.sender.transfer(value);
-      Withdrawl(msg.sender, value);
-      withdrawlState = false;
+      Withdrawal(msg.sender, value);
+      withdrawalState = false;
     }
   }
 }

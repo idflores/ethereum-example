@@ -1,5 +1,5 @@
 # Solidity
-A reference to the Solidity DSL.
+A personal reference for the Solidity DSL.
 
 
 ## CheatSheet
