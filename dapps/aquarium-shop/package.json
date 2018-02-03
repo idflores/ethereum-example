@@ -2,7 +2,7 @@
   "name": "aquarium-shop",
   "version": "0.1.0",
   "description": "An example Dapp using Truffle and ReactJS",
-  "main": "index.js",
+  "main": "index.html",
   "directories": {
     "test": "test"
   },
@@ -23,6 +23,12 @@
   },
   "homepage": "https://github.com/idflores/ethereum-example#readme",
   "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "truffle": "^4.0.6"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react": "^6.24.1"
   }
 }

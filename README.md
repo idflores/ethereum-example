@@ -128,6 +128,7 @@ The *Ethereum Client* is meant to offer a platform for mining, wallet and accoun
 
 Like the *Ethereum Client*, there are a few implementations of the *web3.js* framework including:
 + [**Web3.js**](https://github.com/ethereum/web3.js) -- the *JavaScript* implementation backed by the [Ethereum Foundation](https://www.ethereum.org/foundation); most popular.
++ [**Web3.py**](https://github.com/ethereum/web3.py) -- a *Python* implementation also backed by the [Ethereum Foundation](https://www.ethereum.org/foundation).
 + [**Web3j**](https://github.com/web3j/web3j) -- a 3rd party *Java* implementation by [Web3j](https://web3j.io/) in London, England.
 + [**Nethereum**](https://github.com/Nethereum/Nethereum) -- a 3rd party *C#* implementation by [Nethereum](http://www.nethereum.com).
 + [**Ethereum-Ruby**](https://github.com/DigixGlobal/ethereum-ruby) -- a 3rd party *Ruby* implementation by [DigixGlobal](https://digix.global) in Singapore.
