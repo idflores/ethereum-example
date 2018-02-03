@@ -146,15 +146,23 @@ While perhaps not beneficial in all cases, this distinctly implies that most mod
 ## Proof-of-Concept
 The purpose of the enclosing repository is to prove to myself deep understanding of the concepts above. Consequently, I performed the following test and created both an Ethereum example contract and example ÐApp.
 
-### Example Contract
+### Example Contract - Savings
 An offline version of Ethereum's [Remix](https://remix.ethereum.org) was used to compile and execute in a test environment the example contract. The test was performed using *JavaScript VM* environment supplied by Remix with Google Chrome as the host browser. Details can be found in [Development Environment](#development-environment).
 
-The example contract, _**Savings**_, is a simple implementation of a Ether savings account. It was designed to be instantiated with an Ether amount and solely accessible by the contract creator. The `deposit()` and `withdrawal()` functions are present for obvious utility and care was taken to prevent a "double dipping" vulnerability which can occur if a request is made to withdrawal multiple times before the transaction has complete execution. The source code can be found at [contracts/savings.sol](docs/savings.sol).
+The example contract, [_**Savings**_](contracts/Savings.sol), is a simple implementation of an Ether savings account. It was designed to be instantiated with an Ether amount and solely accessible by the contract creator. The `deposit()` and `withdrawal()` functions are present for obvious utility and care was taken to prevent a "double dipping" vulnerability which can occur if a request is made to withdrawal multiple times before the transaction has complete execution. The source code can be found at [contracts/savings.sol](docs/savings.sol).
 
 ![](README_assets/Remix-Savings-Contract.png)
 
-### Example ÐApp
-[under development]
+### Example ÐApp - Aquarium Shop
+The example ÐApp, [_**Aquarium Shop**_](dapps/aquarium-shop) was used to demonstrate how a business might use a decentralized application to implemement an Ether point-of-sale system. The [AquariumShop.sol](dapps/aquarium-shop/contracts/AquariumShop.sol) file actually has 2 contracts developed with the following ability:
++ AquariumShop
+  + `buy()` - allows purchase of items from the shop and stores the Ether in the contract
+  + `layaway()` - generates a new smart contract that allows payments over time
+  + `withdrawal()` - allows *only* the shop owner to withdrawal Ether from the contract to his own account
++ Layaway
+  + `makePayment()` - allows customer to make a payment to the contract and automatically deducts from the payoff amount
+
+It should be noted that there are plenty of other ways this ÐApp can be implemented. The developer must decide, for instance, how much they would like the Smart Contract to handle. Arguably, the Smart Contract could handle most operations in this Proof-of-Concept including even the database of customers. But doing this, we begin to experience large overhead when considering the Ether fees necessary to execute and maintain such a Smart Contract. This inherently implies that smart contracts may not be advantageous in all applications. Consequently, this Proof-of-Concept was developed to demonstrate a harmony between centralized and decentralized operations and their respective advantages.
 
 ## Development Environment
 + MacOS High Sierra v10.13.2

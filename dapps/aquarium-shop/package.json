@@ -1,7 +1,7 @@
 {
   "name": "aquarium-shop",
   "version": "0.1.0",
-  "description": "An example Dapp using Truffle, MeteorJS, and ReactJS",
+  "description": "An example Dapp using Truffle and ReactJS",
   "main": "index.js",
   "directories": {
     "test": "test"
