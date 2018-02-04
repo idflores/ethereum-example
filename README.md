@@ -138,7 +138,7 @@ Given this ability to programmatically define the state and behavior of data thr
 
 A **ÐApp** is a **D**ecentralied **App**lication commonly built on the Ethereum BlockChain. More technically, a **ÐApp** is a collection of related Ethereum contracts that reside on the blockchain and perform various functions, most notably the storage of data. It's commonly used for some user-based application and is usually accompanied by some "front-end" interface.
 
-While perhaps not beneficial in all cases, this distinctly implies that most modern web applications could be implemented using a *ÐApp*. An excellent example is the [pet shop adoption service](http://truffleframework.com/tutorials/pet-shop) from the Truffle Suite team. Instead of maintaining a centralized database including information of all pet adoptions, the data is maintained on the blockchain using Ethereum contracts to manage and store adoption transactions. A front-end is easily implemented with *web3.js* and common frameworks like [MeteorJS](https://www.meteor.com). Additionally, we gained some clear advantages:
+While perhaps not beneficial in all cases, this distinctly implies that most modern web applications could be implemented using a *ÐApp*. An excellent example is the [pet shop adoption service](http://truffleframework.com/tutorials/pet-shop) from the Truffle Suite team. Instead of maintaining a centralized database including information of all pet adoptions, the data is maintained on the blockchain using Ethereum contracts to manage and store adoption transactions. A front-end is easily implemented with *web3.js* and common frameworks like [MeteorJS](https://www.meteor.com) or [SailsJS](https://sailsjs.com). Additionally, we gained some clear advantages:
 + transaction **security** is enforced by blockchain,
 + complete transaction payment through **CryptoCurrency**,
 + a little more work, and **USD** can still be used for secure payment, and
@@ -162,6 +162,22 @@ The example ÐApp, [_**Aquarium Shop**_](dapps/aquarium-shop) was used to demons
   + `withdrawal()` - allows *only* the shop owner to withdrawal Ether from the contract to his own account
 + Layaway
   + `makePayment()` - allows customer to make a payment to the contract and automatically deducts from the payoff amount
+
+The *Front-End* uses a very clean, simple design with [ReactJS](https://reactjs.org). A template engine like [HandlebarsJS](http://handlebarsjs.com) could have been easily used here; however, it seemed more advantageous to demonstrate ÐApp concept with a web framework meant for building lightweight, production web applications. [*Webpack*](https://webpack.js.org) was used as the module loader to bundle our files into a minified, production-ready build file for running our Proof-of-Concept.
+
+There are 2 major ReactJS components, [`StoreFront`](dapps/aquarium-shop/src/layouts/StoreFront.js) and [`Item`](dapps/aquarium-shop/src/components/Item.js). `StoreFront` is the main page layout of the application; it includes the header bar, main body, and copyright footer. Each product for sale in the body is described by `Item` which lists the name, price and a purchase option shown by the illustration:
+
+![](README_assets/AquariumShop.png)
+
+The Ether price is calculated by taking the 24 hour high and low market price from the   [GDAX](https://www.gdax.com/trade/ETH-USD) exchange. We average them to get our day's Ether-USD market price a perform the following equation:
+
+```
+Product_Ether_Price = 1 Ether / Market_Price_USD  *  USD_Product_Price  *  Quantity_of_Product
+```
+
+A database for the available products with all this information is kept as a hardcoded script in [`store.js`](dapps/aquarium-shop/src/database/store.js). A database engine like [MongoDB](https://www.mongodb.com) could have been easily used; however, it was a bit "overkill" for the purpose of this demonstration.
+
+The purchase button activates a script that communicates via [Web3.js](https://github.com/ethereum/web3.js/) to the Ethereum blockchain for purchasing the product. For purpose of demonstration, the exact Ether needed to complete the transaction is created "out-of-thin-air".
 
 It should be noted that there are plenty of other ways this ÐApp can be implemented. The developer must decide, for instance, how much they would like the Smart Contract to handle. Arguably, the Smart Contract could handle most operations in this Proof-of-Concept including even the database of customers. But doing this, we begin to experience large overhead when considering the Ether fees necessary to execute and maintain such a Smart Contract. This inherently implies that smart contracts may not be advantageous in all applications. Consequently, this Proof-of-Concept was developed to demonstrate a harmony between centralized and decentralized operations and their respective advantages.
 
