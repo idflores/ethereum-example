@@ -1,10 +1,11 @@
 import Radium from 'radium'
 import React from 'react'
 import https from 'https'
+import Web3 from 'web3'
 
 import db from '../database/store'
 
-export default class Item extends React.Component {
+class Item extends React.Component {
   constructor() {
     super()
     this.state = { price: null }
@@ -49,23 +50,33 @@ export default class Item extends React.Component {
         <div style={styles.imageContainer}>
           <img style={styles.image} src={db[this.props.databaseID].image}></img>
         </div>
-        <div><span>{db[this.props.databaseID].name}</span></div>
-        <div>
-          <span>{this.state.price} </span>
-          <span style={styles.currency}>Ξ</span>
+        <div style={styles.name}>
+          <span>{db[this.props.databaseID].name} </span>
+          <span style={styles.qty}>
+            (qty. {db[this.props.databaseID].quantity})
+          </span>
+        </div>
+        <div style={styles.currency}>
+          <span>{this.state.price} Ξ</span>
+        </div>
+        <div style={styles.button}>
+          <span>Purchase</span>
         </div>
       </div>
     )
   }
 }
 
-Item = Radium(Item)
+export default Radium(Item)
 
 var styles = {
   container: {
     display: "inline-block",
-    backgroundColor: "#F2F2F2",
-    height: "350px",
+    position: "relative",
+    top: "25%",
+    transform: "translateY(-25%)",
+    backgroundColor: "#FCFCFC",
+    height: "auto",
     width:  "300px",
     margin: "30px 45px",
     boxShadow: "1px 2px 8px #C6C6C6",
@@ -84,7 +95,54 @@ var styles = {
     borderRadius: "3px"
   },
 
+  name: {
+    display: "block",
+    fontFamily: "Helvetica Neue",
+    fontWeight: "bold",
+    fontSize: "20px",
+    letterSpacing: "3px",
+    color: "#444",
+    margin: "10px"
+  },
+
+  qty: {
+    fontSize: "14px",
+    letterSpacing: "1px"
+  },
+
   currency: {
-    fontFamily: "arial"
+    display: "block",
+    fontFamily: "Arial",
+    fontSize: "16px",
+    letterSpacing: "1px",
+    color: "#444",
+    margin: "10px"
+  },
+
+  button: {
+    display: "block",
+    padding: "7px 0px",
+    margin: "10px auto",
+    width: "35%",
+    border: "2px solid #444",
+    borderRadius: "6px",
+    color: "#444",
+    fontFamily: "Helvetica Neue",
+    fontSize: "13px",
+    fontWeight: "bold",
+    letterSpacing: "1px",
+
+    ':hover': {
+      color: "#F7F7F7",
+      backgroundColor: "#444",
+      cursor: "pointer"
+    },
+
+    ':active': {
+      color: "#F7F7F7",
+      border: "2px solid #333",
+      backgroundColor: "#333",
+      cursor: "pointer"
+    }
   }
 }

@@ -3,7 +3,7 @@ import React from 'react'
 
 import Item from '../components/Item'
 
-export default class StoreFront extends React.Component {
+class StoreFront extends React.Component {
   render() {
     return(
       <div>
@@ -25,13 +25,15 @@ export default class StoreFront extends React.Component {
   }
 }
 
-StoreFront = Radium(StoreFront)
+export default Radium(StoreFront)
 
 var styles = {
   header: {
+    display: "block",
+    position: "relative",
     backgroundColor: "#F5F5F5",
     boxShadow: "0px 3px 6px #B3B3B3",
-    height: "50px",
+    height: "65px",
     zIndex: "100",
     textAlign: "center"
   },
@@ -40,22 +42,29 @@ var styles = {
     display: "inline-block",
     margin: "auto",
     fontFamily: "Helvetica Neue",
-    fontSize: "18px",
+    fontSize: "26px",
     fontWeight: "bold",
-    lineHeight: "50px",
+    lineHeight: "65px",
     letterSpacing: "3px",
     color: "#444"
   },
 
   body: {
     display: "block",
-    textAlign: "center"
-    // backgroundColor: "#FAFCED",
+    position: "relative",
+    height: "calc(100vh - 105px)",
+    margin: "auto 0px",
+    textAlign: "center",
+    backgroundColor: "#F7F7F7",
+    overflow: "auto"
   },
 
   footer: {
     display: "block",
+    position: "relative",
+    zIndex: "100",
     backgroundColor: "#F5F5F5",
+    boxShadow: "0px -1px 6px #B3B3B3",
     height: "40px",
     textAlign: "center"
   },
