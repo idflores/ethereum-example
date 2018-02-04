@@ -11,12 +11,14 @@ export default class StoreFront extends React.Component {
           <span style={styles.title}>Aquarium Shop</span>
         </div>
         <div style={styles.body}>
-          <Item />
-          <Item />
-          <Item />
+          <Item databaseID="Shrimp" />
+          <Item databaseID="Fish" />
+          <Item databaseID="Tank" />
         </div>
         <div style={styles.footer}>
-
+          <span style={styles.copyright}>
+            © 2018. Israel Flores. BSD-3-Clause License.
+          </span>
         </div>
       </div>
     )
@@ -41,6 +43,8 @@ var styles = {
     fontSize: "18px",
     fontWeight: "bold",
     lineHeight: "50px",
+    letterSpacing: "3px",
+    color: "#444"
   },
 
   body: {
@@ -50,7 +54,16 @@ var styles = {
   },
 
   footer: {
+    display: "block",
     backgroundColor: "#F5F5F5",
-    height: "100px"
+    height: "40px",
+    textAlign: "center"
+  },
+
+  copyright: {
+    fontFamily: "Helvetica Neue",
+    fontSize: "11px",
+    color: "#666",
+    lineHeight: "50px"
   }
 }
