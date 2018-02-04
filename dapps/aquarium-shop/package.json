@@ -7,6 +7,7 @@
     "test": "test"
   },
   "scripts": {
+    "dev": "./node_modules/.bin/webpack-dev-server --inline --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,12 +24,18 @@
   },
   "homepage": "https://github.com/idflores/ethereum-example#readme",
   "dependencies": {
+    "radium": "^0.21.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "truffle": "^4.0.6"
+    "truffle": "^4.0.6",
+    "web3": "^1.0.0-beta.29"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-react": "^6.24.1"
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
   }
 }
