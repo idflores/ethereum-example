@@ -179,9 +179,8 @@ A database for the available products with all this information is kept as a har
 
 The `purchase` button activates a script that communicates via [Truffle-Contract](https://github.com/trufflesuite/truffle-contract), a wrapper for the [Web3.js](https://github.com/ethereum/web3.js/), to the Ethereum blockchain for purchasing the product. The `layaway` button *creates a new contract* giving the user the contract address to make payments in purchasing the product. The Proof-of-Concept is demonstrated by the illustrations respectively:
 
-<img src="README_assets/AquariumShop-Purchase.png" style="width: 400px; height: 121px" />
-
-<img src="README_assets/AquariumShop-Layaway.png" style="width: 400px; height: 121px" />
+<img src="README_assets/AquariumShop-Purchase.png" width="400" height="121" />
+<img src="README_assets/AquariumShop-Layaway.png" width="400" height="121" />
 
 To further implement a "layaway", one should develop a notification system to ship the product to the client. In general, the system should also include a webpage to get the client's credentials, shipping address, etc. Such features are outside of the scope of this demonstration.
 
