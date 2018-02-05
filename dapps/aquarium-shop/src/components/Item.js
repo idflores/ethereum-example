@@ -59,7 +59,8 @@ class Item extends React.Component {
         <div style={styles.currency}>
           <span>{this.state.price} Ξ</span>
         </div>
-        <Button name={db[this.props.databaseID].option} />
+        <Button name={db[this.props.databaseID].option} 
+          price={this.state.price} />
       </div>
     )
   }

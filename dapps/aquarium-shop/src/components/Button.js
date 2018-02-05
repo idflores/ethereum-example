@@ -1,24 +1,57 @@
 import Radium from 'radium'
 import React from 'react'
 
-import Web3 from '../web3Script'
+var AquariumShopContract = require('../web3Script').AquariumShop
+var web3 = require('../web3Script').web3
 
 class Button extends React.Component {
 
-  executeEthereum() {
+  executeContract() {
+    var contract
     if (this.props.name == "Purchase") {
-      alert(Web3.deployed().then(function(instance) {
-  console.log(instance);
-}))
+      AquariumShopContract.deployed().then((instance) => {
+        contract = instance
+        contract.buy({
+          from: "0xC5fdf4076b8F3A5357c5E395ab970B5B54098Fef",
+          gas: "30000",
+          value: web3.utils.toWei(this.props.price, 'ether')
+        })
+        .then(function(result) {
+          console.log(result.tx)
+          alert("Transaction Successful!\nTX: " + result.tx)
+        })
+      })
+      .catch(function(err) { alert(err.stack) })
     }
     else if (this.props.name == "Layaway") {
-      alert("Layaway")
+      AquariumShopContract.deployed().then((instance) => {
+        contract = instance
+        contract.layaway(web3.utils.toWei(this.props.price, 'ether'), {
+          from: "0xC5fdf4076b8F3A5357c5E395ab970B5B54098Fef",
+          gas: "300000",
+          value: "100"
+        })
+      })
+      .then(function() {
+        var index
+        contract.layawayLength.call(
+          {from: "0xC5fdf4076b8F3A5357c5E395ab970B5B54098Fef"})
+        .then(function(length) { index = length - 1 })
+        .then(function() {
+          contract.layawayContracts.call(index,
+            {from: "0xC5fdf4076b8F3A5357c5E395ab970B5B54098Fef"})
+          .then(function(address) {
+            alert("Layaway Successful!\nMake payments to: " + address)
+          })
+        })
+      })
+      .catch(function(err) { console.log(err.stack) })
     }
   }
 
   render() {
     return(
-      <div style={styles.button} onClick={this.executeEthereum.bind(this)}>
+      <div style={styles.button} onClick={this.executeContract.bind(this)}>
         <span>{this.props.name}</span>
       </div>
     )

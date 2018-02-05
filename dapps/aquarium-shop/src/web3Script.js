@@ -24,9 +24,8 @@ module.exports = (function () {
     AquariumShop.currentProvider.sendAsync = function() {
       return AquariumShop.currentProvider.send.apply(
         AquariumShop.currentProvider, arguments
-      )
-    }
+    )}
   }
 
-  return AquariumShop
+  return { web3: web3, AquariumShop: AquariumShop }
 })()

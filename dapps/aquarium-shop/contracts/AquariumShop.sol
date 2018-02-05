@@ -18,9 +18,13 @@ contract AquariumShop {
   function buy() public payable { }
 
   // generates a new contract per customer
-  function layaway(bytes32 name, uint amount) public {
-    address newLayaway = new Layaway(name, amount);
+  function layaway(uint price) public payable {
+    address newLayaway = (new Layaway).value(msg.value)(price);
     layawayContracts.push(newLayaway);
+  }
+
+  function layawayLength() public view returns (uint) {
+    return layawayContracts.length;
   }
 
   function withdrawal(uint amount) checkSender checkWithdrawalState public {
@@ -31,17 +35,15 @@ contract AquariumShop {
 }
 
 contract Layaway {
-  bytes32 public clientName;
   uint public payoff;
 
   // makes an instance of the Layaway contract
-  function Layaway(bytes32 name, uint amount) public {
-    clientName = name;
-    payoff = amount;
+  function Layaway(uint price) public payable {
+    payoff = price - msg.value;
   }
 
   // allows for a payment to be made by the client
-  function makePayment() public payable {
+  function () public payable {
     assert(payoff > 0);
     payoff -= msg.value;
   }

@@ -177,7 +177,13 @@ Product_Ether_Price = 1 Ether / Market_Price_USD  *  USD_Product_Price  *  Quant
 
 A database for the available products with all this information is kept as a hardcoded script in [`store.js`](dapps/aquarium-shop/src/database/store.js). A database engine like [MongoDB](https://www.mongodb.com) could have been easily used; however, it was a bit "overkill" for the purpose of this demonstration.
 
-The purchase button activates a script that communicates via [Web3.js](https://github.com/ethereum/web3.js/) to the Ethereum blockchain for purchasing the product. For purpose of demonstration, the exact Ether needed to complete the transaction is created "out-of-thin-air".
+The `purchase` button activates a script that communicates via [Truffle-Contract](https://github.com/trufflesuite/truffle-contract), a wrapper for the [Web3.js](https://github.com/ethereum/web3.js/), to the Ethereum blockchain for purchasing the product. The `layaway` button *creates a new contract* giving the user the contract address to make payments in purchasing the product. The Proof-of-Concept is demonstrated by the illustrations respectively:
+
+![](README_assets/AquariumShop-Purchase.png)
+
+![](README_assets/AquariumShop-Layaway.png)
+
+To further implement a "layaway", one should develop a notification system to ship the product to the client. In general, the system should also include a webpage to get the client's credentials, shipping address, etc. Such features are outside of the scope of this demonstration.
 
 It should be noted that there are plenty of other ways this ÐApp can be implemented. The developer must decide, for instance, how much they would like the Smart Contract to handle. Arguably, the Smart Contract could handle most operations in this Proof-of-Concept including even the database of customers. But doing this, we begin to experience large overhead when considering the Ether fees necessary to execute and maintain such a Smart Contract. This inherently implies that smart contracts may not be advantageous in all applications. Consequently, this Proof-of-Concept was developed to demonstrate a harmony between centralized and decentralized operations and their respective advantages.
 
@@ -221,3 +227,5 @@ This project is meant to be a personal knowledge-base and example of the Ethereu
 + [LLL Docs](http://lll-docs.readthedocs.io/en/latest/lll_introduction.html)
 + [Pet Shop Adoption Service](http://truffleframework.com/tutorials/pet-shop) -- from Truffle Suite
 + [Lifecycle of an Ethereum Transaction](https://medium.com/blockchannel/life-cycle-of-an-ethereum-transaction-e5c66bae0f6e)
++ [Casper](https://blog.ethereum.org/2015/08/01/introducing-casper-friendly-ghost/) -- Ethereum's new Proof-of-Stake
++ [Ether](https://www.ethereum.org/ether) -- from the Ethereum Foundation
