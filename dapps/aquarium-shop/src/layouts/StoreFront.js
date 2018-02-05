@@ -1,19 +1,23 @@
 import Radium from 'radium'
 import React from 'react'
 
+import db from '../database/store'
 import Item from '../components/Item'
 
 class StoreFront extends React.Component {
   render() {
+    var itemList = Object.keys(db)
+    var items = itemList.map(name => {
+      return <Item key={itemList.indexOf(name)} databaseID={name} />
+    })
+
     return(
       <div>
         <div style={styles.header}>
           <span style={styles.title}>Aquarium Shop</span>
         </div>
         <div style={styles.body}>
-          <Item databaseID="Shrimp" />
-          <Item databaseID="Fish" />
-          <Item databaseID="Tank" />
+          { items }
         </div>
         <div style={styles.footer}>
           <span style={styles.copyright}>

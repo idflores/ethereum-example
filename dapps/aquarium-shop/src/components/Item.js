@@ -1,8 +1,8 @@
 import Radium from 'radium'
 import React from 'react'
 import https from 'https'
-import Web3 from 'web3'
 
+import Button from './Button'
 import db from '../database/store'
 
 class Item extends React.Component {
@@ -59,9 +59,7 @@ class Item extends React.Component {
         <div style={styles.currency}>
           <span>{this.state.price} Ξ</span>
         </div>
-        <div style={styles.button}>
-          <span>Purchase</span>
-        </div>
+        <Button name={db[this.props.databaseID].option} />
       </div>
     )
   }
@@ -117,32 +115,5 @@ var styles = {
     letterSpacing: "1px",
     color: "#444",
     margin: "10px"
-  },
-
-  button: {
-    display: "block",
-    padding: "7px 0px",
-    margin: "10px auto",
-    width: "35%",
-    border: "2px solid #444",
-    borderRadius: "6px",
-    color: "#444",
-    fontFamily: "Helvetica Neue",
-    fontSize: "13px",
-    fontWeight: "bold",
-    letterSpacing: "1px",
-
-    ':hover': {
-      color: "#F7F7F7",
-      backgroundColor: "#444",
-      cursor: "pointer"
-    },
-
-    ':active': {
-      color: "#F7F7F7",
-      border: "2px solid #333",
-      backgroundColor: "#333",
-      cursor: "pointer"
-    }
   }
 }
