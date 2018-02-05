@@ -7,7 +7,9 @@ class Button extends React.Component {
 
   executeEthereum() {
     if (this.props.name == "Purchase") {
-      alert(Web3)
+      alert(Web3.deployed().then(function(instance) {
+  console.log(instance);
+}))
     }
     else if (this.props.name == "Layaway") {
       alert("Layaway")
