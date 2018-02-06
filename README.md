@@ -6,18 +6,18 @@
 After performing [research](https://github.com/idflores/blockchain-example) in Blockchain technology, I discovered major blockchain implementations that needed their own repository to continue performing personal in-depth studies. This repository is purposed as a growing knowledge-base for the Ethereum blockchain and is focused on the technology beyond its CryptoCurrency applications.
 
 ## Usage
-#### [Savings Contract](contracts/savings.sol)
+### [Savings Contract](contracts/savings.sol)
 1. Copy and paste the desired contract code from [`contracts/savings.sol`](contracts/savings.sol) to Ethereum's [Remix](https://remix.ethereum.org) IDE.
 
 2. Create a contract instance and test by depositing and withdrawaling Ether.
 
-#### [Aquarium Shop ÐApp](dapps/aquarium-shop)
-##### Prerequisites
+### [Aquarium Shop ÐApp](dapps/aquarium-shop)
+#### Prerequisites
 + Install the [Ganache Desktop Client](http://truffleframework.com/ganache/) and have it *running*
 + Make sure you have [Node v8.9.4 "Carbon"](https://nodejs.org/en/download/) installed
 + Make sure you have [NPM v5.6.0](https://www.npmjs.com/get-npm) installed
 
-##### Procedure
+#### Procedure
 Clone the repository and run the server by doing the following:
 ```bash
 cd ethereum-example/dapps/aquarium-shop
@@ -27,7 +27,7 @@ The `run` script will set up your environment, install any necessary dependencie
 
 Take a look at the demonstration running on [localhost:8080](localhost:8080). You should see the example illustrated in the section [Example DApp - Aquarium Shop](#example-dapp---aquarium-shop).
 
-##### Clean Up
+#### Clean Up
 Because some packages are necessary to install on NPM's global scope, a `clean` script has been included to remove them should you wish to remove the demonstration after viewing. Perform the following:
 ```bash
 cd ethereum-example/dapps/aquarium-shop
