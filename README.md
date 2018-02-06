@@ -12,7 +12,30 @@ After performing [research](https://github.com/idflores/blockchain-example) in B
 2. Create a contract instance and test by depositing and withdrawaling Ether.
 
 #### [Aquarium Shop ÐApp](dapps/aquarium-shop)
-[under development]
+##### Prerequisites
++ Install the [Ganache Desktop Client](http://truffleframework.com/ganache/) and have it *running*
++ Make sure you have [Node v8.9.4 "Carbon"](https://nodejs.org/en/download/) installed
++ Make sure you have [NPM v5.6.0](https://www.npmjs.com/get-npm) installed
+
+##### Procedure
+Clone the repository and run the server by doing the following:
+```bash
+cd ethereum-example/dapps/aquarium-shop
+sh run
+```
+The `run` script will set up your environment, install any necessary dependencies and run the server.
+
+Take a look at the demonstration running on [localhost:8080](localhost:8080). You should see the example illustrated in the section [Example DApp - Aquarium Shop](#example-dapp-aquarium-shop).
+
+##### Clean Up
+Because some packages are necessary to install on NPM's global scope, a `clean` script has been included to remove them should you wish to remove the demonstration after viewing. Perform the following:
+```bash
+cd ethereum-example/dapps/aquarium-shop
+sh clean
+```
+
+*WARNING*: This will uninstall `webpack` from the NPM's global scope. You will need to install `webpack` again if you use this script and wish to keep `webpack`.
+
 
 ## "White Paper"
 
@@ -154,7 +177,7 @@ The example contract, [_**Savings**_](contracts/Savings.sol), is a simple implem
 
 ![](README_assets/Remix-Savings-Contract.png)
 
-### Example ÐApp - Aquarium Shop
+### Example DApp - Aquarium Shop
 The example ÐApp, [_**Aquarium Shop**_](dapps/aquarium-shop) was used to demonstrate how a business might use a decentralized application to implemement an Ether point-of-sale system. The [AquariumShop.sol](dapps/aquarium-shop/contracts/AquariumShop.sol) file actually has 2 contracts developed with the following ability:
 + AquariumShop
   + `buy()` - allows purchase of items from the shop and stores the Ether in the contract
@@ -182,9 +205,9 @@ The `purchase` button activates a script that communicates via [Truffle-Contract
 <img src="README_assets/AquariumShop-Purchase.png" width="400" height="121" />
 <img src="README_assets/AquariumShop-Layaway.png" width="400" height="121" />
 
-To further implement a "layaway", one should develop a notification system to ship the product to the client. In general, the system should also include a webpage to get the client's credentials, shipping address, etc. Such features are outside of the scope of this demonstration.
+To further implement a "layaway", one should develop a notification system to ship the product to the client. In general, the system should also include a webpage to get the client's credentials, shipping address, etc. One could also implement a login and accounts feature to handle layaway payments and transaction history viewing. Such enhancements are outside of the scope of this demonstration.
 
-It should be noted that there are plenty of other ways this ÐApp can be implemented. The developer must decide, for instance, how much they would like the Smart Contract to handle. Arguably, the Smart Contract could handle most operations in this Proof-of-Concept including even the database of customers. But doing this, we begin to experience large overhead when considering the Ether fees necessary to execute and maintain such a Smart Contract. This inherently implies that smart contracts may not be advantageous in all applications. Consequently, this Proof-of-Concept was developed to demonstrate a harmony between centralized and decentralized operations and their respective advantages.
+Furthermore, it should be noted that there are plenty of other ways this ÐApp can be implemented. The developer must decide, for instance, how much they would like the Smart Contract to handle. Arguably, the Smart Contract could handle most operations in this Proof-of-Concept including even the database of customers. But doing this, we begin to experience large overhead when considering the Ether fees necessary to execute and maintain such a Smart Contract. This inherently implies that smart contracts may not be advantageous in all applications. Consequently, this Proof-of-Concept was developed to demonstrate a harmony between centralized and decentralized operations and their respective advantages.
 
 ## Development Environment
 + MacOS High Sierra v10.13.2
@@ -204,6 +227,7 @@ It should be noted that there are plenty of other ways this ÐApp can be impleme
 + [Truffle v4.0.6](http://truffleframework.com) -- `npm install -g truffle`
   + [Truffle-Contract v3.0.3](https://github.com/trufflesuite/truffle-contract/blob/15680f9a742beae696e2b08a7f10d3ba5c1f9ca1/dist/truffle-contract.js) -- `npm install --save truffle-contract`
 + [Ganache v1.1.0-beta.0](http://truffleframework.com/ganache/)
+Docker was not used for ÐApps development. Since Docker for Mac runs in a virtual machine, it is very challenging to reliably connect docker to the Ganache local server on `localhost`. Alternatively, one could use the Ganache-CLI; however, during tests, the CLI version was not equivalent to the desktop version often breaking on basic features -- citing calls and transactions that did not exist and giving unpredictable results. Therefore, the Docker version of the Ganache-CLI was ruled out as well, and Shell scripts were developed for ease of demonstration.
 
 ## Disclaimer
 This project is meant to be a personal knowledge-base and example of the Ethereum blockchain technology principles. Several features are intentionally missing. While the repository will grow with new research, examples and algorithms, it is never recommended to be used for production.

@@ -1,0 +1,4 @@
+#! /bin/sh
+
+npm uninstall -g truffle
+npm uninstall -g webpack

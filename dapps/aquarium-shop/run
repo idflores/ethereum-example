@@ -1,0 +1,9 @@
+#! /bin/sh
+
+npm install -g truffle
+npm install -g webpack
+npm install
+truffle compile
+webpack -p
+truffle migrate
+node server.js

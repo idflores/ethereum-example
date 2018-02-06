@@ -34,12 +34,14 @@ class Button extends React.Component {
       })
       .then(function() {
         var index
-        contract.layawayLength.call(
-          {from: "0xC5fdf4076b8F3A5357c5E395ab970B5B54098Fef"})
+        contract.layawayLength.call({
+          from: "0xC5fdf4076b8F3A5357c5E395ab970B5B54098Fef"
+        })
         .then(function(length) { index = length - 1 })
         .then(function() {
-          contract.layawayContracts.call(index,
-            {from: "0xC5fdf4076b8F3A5357c5E395ab970B5B54098Fef"})
+          contract.layawayContracts.call(index, {
+            from: "0xC5fdf4076b8F3A5357c5E395ab970B5B54098Fef"
+          })
           .then(function(address) {
             alert("Layaway Successful!\nMake payments to: " + address)
           })
