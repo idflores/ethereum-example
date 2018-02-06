@@ -5,6 +5,7 @@
 ## Usage
 #### Prerequisites
 + Install the [Ganache Desktop Client](http://truffleframework.com/ganache/) and have it *running*
+  + Make sure Ganache's RPC server is set to `http://127.0.0.1:7545`
 + Make sure you have [Node v8.9.4 "Carbon"](https://nodejs.org/en/download/) installed
 + Make sure you have [NPM v5.6.0](https://www.npmjs.com/get-npm) installed
 
