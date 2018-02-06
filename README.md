@@ -227,6 +227,7 @@ Furthermore, it should be noted that there are plenty of other ways this ÐApp c
 + [Truffle v4.0.6](http://truffleframework.com) -- `npm install -g truffle`
   + [Truffle-Contract v3.0.3](https://github.com/trufflesuite/truffle-contract/blob/15680f9a742beae696e2b08a7f10d3ba5c1f9ca1/dist/truffle-contract.js) -- `npm install --save truffle-contract`
 + [Ganache v1.1.0-beta.0](http://truffleframework.com/ganache/)
+
 Docker was not used for ÐApps development. Since Docker for Mac runs in a virtual machine, it is very challenging to reliably connect docker to the Ganache local server on `localhost`. Alternatively, one could use the Ganache-CLI; however, during tests, the CLI version was not equivalent to the desktop version often breaking on basic features -- citing calls and transactions that did not exist and giving unpredictable results. Therefore, the Docker version of the Ganache-CLI was ruled out as well, and Shell scripts were developed for ease of demonstration.
 
 ## Disclaimer
