@@ -1,3 +1,14 @@
+/*
+Copyright 2018 Israel Flores. All rights reserved.
+Use of this source code is governed by a BSD-style
+license that can be found in the LICENSE file.
+
+Author:     Israel Flores (https://github.com/idflores)
+File:       src/components/Button.js
+Purpose:    defines the Button for each store item and includes logic for
+            interacting with the blockchain
+*/
+
 import Radium from 'radium'
 import React from 'react'
 

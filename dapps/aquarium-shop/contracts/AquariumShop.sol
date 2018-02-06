@@ -1,3 +1,14 @@
+/*
+Copyright 2018 Israel Flores. All rights reserved.
+Use of this source code is governed by a BSD-style
+license that can be found in the LICENSE file.
+
+Author:     Israel Flores (https://github.com/idflores)
+File:       src/contracts/AquariumShop.sol
+Purpose:    definition of Aquarium Shop contract; includes contract template
+            `Layaway` to generate contracts per client
+*/
+
 pragma solidity ^0.4.17;
 
 contract AquariumShop {

@@ -1,5 +1,15 @@
 #! /bin/sh
 
+# Copyright 2018 Israel Flores. All rights reserved.
+# Use of this source code is governed by a BSD-style
+# license that can be found in the LICENSE file.
+#
+# Author:     Israel Flores (https://github.com/idflores)
+# File:       run
+# Purpose:    main run file; sets up enviroment and runs local web server for
+#             viewing at localhost:8080
+
+
 npm install -g truffle
 npm install -g webpack
 npm install

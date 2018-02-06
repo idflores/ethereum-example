@@ -1,3 +1,14 @@
+/*
+Copyright 2018 Israel Flores. All rights reserved.
+Use of this source code is governed by a BSD-style
+license that can be found in the LICENSE file.
+
+Author:     Israel Flores (https://github.com/idflores)
+File:       src/web3Script.js
+Purpose:    instantiates and configures Ethereum's web3 blockchain API with
+            Truffle's `truffle-contract` wrapper
+*/
+
 // Because of automatic caching with require()/import, the web3 implementation
 // is put in its own file to be instantiated at the first import and referenced
 // during subsequent component instantiations.
