@@ -15,6 +15,8 @@ After performing [research](https://github.com/idflores/blockchain-example) in B
 #### Prerequisites
 + Install the [Ganache Desktop Client](http://truffleframework.com/ganache/) and have it *running*
   + Make sure Ganache's RPC server is set to `http://127.0.0.1:7545`
+  + Make sure you are using the following mnemonics to ensure your address hash's are the same:
+  ```candy maple cake sugar pudding cream honey rich smooth crumble sweet treat```
 + Make sure you have [Node v8.9.4 "Carbon"](https://nodejs.org/en/download/) installed
 + Make sure you have [NPM v5.6.0](https://www.npmjs.com/get-npm) installed
 
